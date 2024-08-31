@@ -1,0 +1,101 @@
+.loginUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.containerloginUser {
+    width: 80%;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background: violet;
+    border: 2px solid white;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+    box-shadow: 5px 5px 10px rgb(227, 11, 235);
+    padding-top: 5px;
+}
+.loginUser__containerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.loginUser__title {
+    color: white;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.loginUser__underline {
+    width: 61px;
+    height: 6px;
+    background: white;
+    border-radius: 9px;
+}
+.loginUser__containerInputs {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.loginUser__containerInput {
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+}
+.msgError {
+    font-size: 12px;
+    height: 12px;
+    margin-inline: 10px;
+}
+.loginUser__input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 12px;
+}
+.loginUser__iconInput {
+    color: violet;
+}
+.loginUser__forgotPass {
+    margin-top: 5px;
+    padding-left: 25px;
+    font-size: 10px;
+    color: white;
+}
+.forgotPassLink {
+    color: white;
+    cursor: pointer;
+}
+.loginUser__containerBtns {
+    display: flex;
+    margin: 30px auto;
+}
+.loginUser__button {
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    color: violet;
+    background-color: white;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 1px solid violet;
+    border-radius: 12px;
+    outline: none;
+    filter: drop-shadow(5px 5px 10px white);
+    font-size: 12px;
+}
+
