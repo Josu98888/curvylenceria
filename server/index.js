@@ -22,7 +22,7 @@ const connectDB = async () => {
                console.log('=============================');
                console.log('===========  API  ===========');
                console.log('=============================');
-               console.log(`htpp://${ipServer}:${port}/api/${apiVersion}/`);
+               console.log(`http://${ipServer}:${port}/api/${apiVersion}/`);
           })
      } catch (error) {
           console.log('ERROR al conectar la BD', error)
