@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styles from "../css/registerForm.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerFetch } from "../api/registerFetch";
 
 const RegisterForm = () => {
+    const navigate = useNavigate() ;
+
     const [formData, setFormData] = useState({
         firstname: "",
         email: "",
@@ -25,6 +27,7 @@ const RegisterForm = () => {
             try {
                 const res = await registerFetch(formData);
                 console.log(res);
+                navigate('/loginForm')
             } catch (error) {
                throw error ;
             }
@@ -65,8 +68,8 @@ const RegisterForm = () => {
                                 className={styles.loginUser__input}
                                 type="email"
                                 placeholder="email"
-                                id="emailRegister"
-                                name="emailRegister"
+                                id="email"
+                                name="email"
                                 value={email}
                                 onChange={handleInputChange}
                             />

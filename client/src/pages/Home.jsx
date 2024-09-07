@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+    const { user } = useContext(AuthContext);
 
-export default Home
+    return (
+        <div>
+            <p>
+                Bienvenido{" "}
+                {user?.firstname ? (
+                    <span>{user.firstname}</span> // Solo muestra el nombre si el usuario está autenticado
+                ) : (
+                    <span>Invitado</span> // Si no hay usuario, muestra algo más
+                )}
+            </p>
+        </div>
+    );
+};
+
+export default Home;

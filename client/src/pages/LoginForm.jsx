@@ -1,10 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/registerForm.module.css";
+import { loginFetch } from "../api/loginFetch";
+import { AuthContext } from "../context/AuthContext";
 
 const LoginForm = () => {
+    const { login } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+    });
+
+    const { email, password } = formData;
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const { access } = await loginFetch(formData);
+            login(access);
+            localStorage.setItem("access", access);
+            navigate("/");
+        } catch (error) {
+            throw error;
+        }
+    };
     return (
-        <form id="registerForm">
+        <form onSubmit={handleSubmit}>
             <div className={styles.loginUser}>
                 <div className={styles.containerloginUser}>
                     {/* titulo */}
@@ -28,7 +59,9 @@ const LoginForm = () => {
                                 type="email"
                                 placeholder="email"
                                 id="emailRegister"
-                                name="emailRegister"
+                                name="email"
+                                value={email}
+                                onChange={handleInputChange}
                             />
                         </div>
                         {/* mensaje error */}
@@ -43,6 +76,8 @@ const LoginForm = () => {
                                 type="password"
                                 placeholder="contraseña"
                                 name="password"
+                                value={password}
+                                onChange={handleInputChange}
                             />
                         </div>
                     </div>
@@ -62,7 +97,10 @@ const LoginForm = () => {
                                 Registrarse
                             </button>
                         </Link>
-                        <button className={styles.loginUser__button}>
+                        <button
+                            className={styles.loginUser__button}
+                            type="submit"
+                        >
                             Iniciar sesión
                         </button>
                     </div>
