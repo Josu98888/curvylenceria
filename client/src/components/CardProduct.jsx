@@ -26,9 +26,10 @@ const CardProduct = ({ item }) => {
                     <BlockFavorite item= {item} />
                 </div>
                 {/* ver producto*/}
-                <div >
+                <div className={styles.cardPoduct__containerCart} >
                     <Link
                         className={styles.cardProduct__link}
+                        to={`/products/${item._id}`}
                     >
                         Ver producto
                     </Link>

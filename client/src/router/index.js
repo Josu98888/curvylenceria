@@ -8,8 +8,9 @@ import ForgotPassword from '../pages/ForgotPassword';
 import { AuthProvider } from '../context/AuthContext';
 import PerfilUser from '../pages/PerfilUser';
 import AllProducts from '../pages/AllProducts';
-import { getProductsFetch } from '../api/getProductsFetch';
+import { getProductFetch } from '../api/getProductFetch';
 import ProtectedRoute from '../pages/ProtectedRoute'
+import Product from '../pages/Product';
 
 
 //crea un enrutador del navegador
@@ -42,7 +43,11 @@ export const router = createBrowserRouter([
             {
                 path: '/products',
                 element: <AllProducts />,
-                loader: getProductsFetch,
+            },
+            {
+                path: '/products/:_id',
+                element: <Product />,
+                loader: getProductFetch,
             },
         ]
     },

@@ -47,6 +47,16 @@
 .cardProduct__priceOld  {
     border: none;
 }
+.cardPoduct__containerCart {
+    background-color:rgb(227, 11, 235) ;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
  .cardProduct__link {
      color: white;
      text-decoration: none;
