@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../css/cardProduct.module.css";
+import BlockFavorite from '../components/BlockFavorite' ;
+import HaveOffer from '../components/HaveOffer' ;
 
 const CardProduct = ({ item }) => {
     const { image, title } = item;
@@ -16,6 +18,13 @@ const CardProduct = ({ item }) => {
                 />
                 {/* titulo */}
                 <h1 className={styles.cardProduct__title}> {title} </h1>
+                {/* contenedor favorito y precio */}
+                <div className={styles.cardProduct__containerPriceAndFav}>
+                    {/* precio */}
+                    <HaveOffer item= {item} />
+                    {/* favorito */}
+                    <BlockFavorite item= {item} />
+                </div>
                 {/* ver producto*/}
                 <div >
                     <Link

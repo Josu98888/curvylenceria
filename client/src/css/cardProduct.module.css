@@ -15,7 +15,38 @@
      font-size:small;
      text-align: center;
  }
- 
+ .cardProduct__containerPriceAndFav{
+    color: rgb(227, 11, 235);
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.buttonFavorite {
+    text-decoration: none;
+}
+#favorite {
+    color: rgb(227, 11, 235);
+    display: none;
+}
+#notFavorite:active {
+    background-color: rgb(227, 11, 235);
+    display: none;
+}
+
+#favorite:active{
+    color: rgb(227, 11, 235);
+    display: block;
+}
+
+.cardProduct__price, .cardProduct__priceOld {
+    border: 1px solid rgb(227, 11, 235);
+    border-radius: 2px;
+    padding: 2px;
+    font-size: 12px;
+}
+.cardProduct__priceOld  {
+    border: none;
+}
  .cardProduct__link {
      color: white;
      text-decoration: none;
