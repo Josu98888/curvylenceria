@@ -7,39 +7,42 @@ import LoginForm from '../pages/LoginForm';
 import ForgotPassword from '../pages/ForgotPassword';
 import { AuthProvider } from '../context/AuthContext';
 import PerfilUser from '../pages/PerfilUser';
-import ProtectedRoute from '../pages/ProtectedRoute';
+import AllProducts from '../pages/AllProducts';
+import { getProductsFetch } from '../api/getProductsFetch';
+import ProtectedRoute from '../pages/ProtectedRoute'
 
 
 //crea un enrutador del navegador
 export const router = createBrowserRouter([
     {
         path: '/',
-        element:  <AuthProvider> <Layout /> </AuthProvider>,
+        element: <AuthProvider> <Layout /> </AuthProvider>,
         errorElement: <Error404 />,
         children: [
             {
                 path: '/',
-                element: <Home />,
+                element:<Home />,
             },
             {
                 path: '/registerForm',
-                element: <RegisterForm />,
+                element:<RegisterForm />,
             },
             {
                 path: '/loginForm',
-                element: <LoginForm />,
+                element:<LoginForm />,
             },
             {
                 path: '/perfilUser',
-                element:
-                    <ProtectedRoute>
-                        <PerfilUser />
-                    </ProtectedRoute>
-                ,
+                element:<ProtectedRoute> <PerfilUser /> </ProtectedRoute> ,
             },
             {
                 path: '/forgotPassword',
                 element: <ForgotPassword />,
+            },
+            {
+                path: '/products',
+                element: <AllProducts />,
+                loader: getProductsFetch,
             },
         ]
     },

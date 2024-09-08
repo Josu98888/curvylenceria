@@ -11,8 +11,10 @@ export const AuthProvider = ({ children }) => {
 
           (async () => {
                const token = localStorage.getItem('access');
-               await login(token);
-               setLoading(false)
+               if(token) {
+                    await login(token);
+               }
+               setLoading(false) ;
           })();
      }, []);
 
@@ -36,8 +38,8 @@ export const AuthProvider = ({ children }) => {
           setUser,
           login,
           logout,
+          loading,
      }
-     if (loading) return <p>Cargando...</p>; 
 
      return <AuthContext.Provider value={data}> {children} </AuthContext.Provider>
 }

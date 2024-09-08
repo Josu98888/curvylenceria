@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import AllProducts from "./AllProducts";
 
 const Home = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <p>Cargando...</p>; // Mostrar mientras los datos están cargándose
+    }
 
     return (
         <div>
@@ -14,6 +19,10 @@ const Home = () => {
                     <span>Invitado</span> // Si no hay usuario, muestra algo más
                 )}
             </p>
+            {/*Todos los productos*/}
+            <div>
+                <AllProducts />
+            </div>
         </div>
     );
 };

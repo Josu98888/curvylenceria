@@ -33,7 +33,7 @@ async function getProducts(req, res) {
     }
 };
 
-// obtenere productos
+// obtener producto
 async function getProduct(req, res) {
     const {id} = req.params ; 
 

@@ -13,9 +13,12 @@ export const getMeFetch = async (token) => {
           const response = await fetch(url,params) ;
           const result = await response.json() ;
 
-          if(response.status !== 200) throw response ;
+          if (!response.ok) {
+               throw new Error('No se pudo obtener el usuario');
+          }
           return result ;
      } catch (error) {
+          console.error('ERROR al obtener usuario', error)
           throw error ;
      }
 }
