@@ -11,6 +11,8 @@ import AllProducts from '../pages/AllProducts';
 import { getProductFetch } from '../api/getProductFetch';
 import Product from '../pages/Product';
 import SearchResults from '../pages/SearchResults';
+import Offers from '../pages/Offers';
+import Favorites from '../pages/Favorites';
 
 
 //crea un enrutador del navegador
@@ -52,6 +54,14 @@ export const router = createBrowserRouter([
             {
                 path: '/search',
                 element: <SearchResults />,
+            },
+            {
+                path: '/offers',
+                element: <Offers />,
+            },
+            {
+                path: '/favorites',
+                element: <Favorites />,
             },
         ]
     },

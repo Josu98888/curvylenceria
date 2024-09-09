@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import AllProducts from "./AllProducts";
 import SocialNetworks from "../components/SocialNetworks";
+import SliderProducts from "../components/SliderProduct";
+import Offers from "./Offers";
+import ButtonAll from "../components/ButtonAll";
 
 const Home = () => {
     const { user, loading } = useContext(AuthContext);
@@ -20,9 +22,20 @@ const Home = () => {
                     <span>Invitado</span> // Si no hay usuario, muestra algo más
                 )}
             </p>
-            {/*Todos los productos*/}
+            {/* destacados */}
             <div>
-                <AllProducts />
+                <SliderProducts />
+            </div>
+            <div>
+            <ButtonAll route={'/products'} title={'Todos los productos'}/>
+            </div>
+            {/* ofertas */}
+            <div>
+                <Offers />
+            </div>
+            {/* Boton todas las offertas */}
+            <div>
+            <ButtonAll route={'/offers'} title={'Todas las ofertas'}/>
             </div>
             {/* redes sociales */}
             <div>

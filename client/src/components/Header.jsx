@@ -19,7 +19,7 @@ const Header = () => {
             <button className={styles.header__menu} onClick={toggleMenu}>
                 <i className="bi bi-list-stars"></i>
             </button>
-            {isMenuOpen && <DropdownMenu />}
+            {isMenuOpen && <DropdownMenu onCloseMenu={toggleMenu} />}
             {/*/ parte izq menu */}
             <Link to={user ? "/perfilUser" : "/registerForm"}>
                 <button className={styles.header__user}>
