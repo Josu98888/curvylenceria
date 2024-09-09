@@ -4,9 +4,13 @@ import styles from "../css/registerForm.module.css";
 import { useNavigate } from "react-router-dom";
 
 const PerfilUser = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout,loading } = useContext(AuthContext);
     const navigate = useNavigate() ;
-    
+
+    if (loading) {
+        return <p>Cargando...</p>; // Mostrar mientras los datos están cargándose
+    }
+
     const handleLogout = () => {
      logout() ;
      navigate('/') ;

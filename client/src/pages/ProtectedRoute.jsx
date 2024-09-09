@@ -1,23 +1,18 @@
-import { useContext, useEffect } from 'react'
-import {useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { useContext, useEffect} from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-const ProtectedRoute = ({children}) => {
-     const { user } = useContext(AuthContext);
-     const navigate = useNavigate()
+const ProtectedRoute = ({ children }) => {
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate() ;
 
-     useEffect(() => {
+    useEffect(() => {
       if (!user) {
         navigate('/'); // Redirigir si el usuario no está autenticado
       }
     }, [user, navigate]);
+    // Si el usuario está autenticado, renderizar el contenido protegido
+    return children;
+};
 
-     if (!user) {
-       return null ;
-     }
-   
-     // Si el usuario está autenticado, renderizar el contenido protegido
-     return children;
-}
-
-export default ProtectedRoute
+export default ProtectedRoute;

@@ -1,0 +1,75 @@
+import React, { useEffect, useState } from "react";
+import styles from "../css/navbar.module.css";
+import { Link, useNavigate } from "react-router-dom";
+import { getProductsFetch } from "../api/getProductsFetch";
+
+const Navbar = () => {
+    const [search, setSearch] = useState("");
+    const navigate = useNavigate();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProductsFetch()
+            .then((data) => setProducts(data))
+            .catch((error) => console.log(error));
+    }, []);
+
+    const searcher = (e) => { 
+        setSearch(e.target.value);
+    };
+    // metodo de filtrado
+    const handleSearch = (e) => {
+        e.preventDefault();
+        // Dividimos el término de búsqueda en palabras individuales
+        const searchTerms = search.toLowerCase().split(" ");
+
+        // Filtramos los productos para incluir solo aquellos que contengan todas las palabras de búsqueda
+        const results =
+            searchTerms.length > 0
+                ? products.filter((item) =>
+                      searchTerms.every((term) =>
+                          item.title.toLowerCase().includes(term)
+                      )
+                  )
+                : products;
+
+        navigate("/search", { state: { results } });
+    };
+    return (
+        <div className={styles.navbar}>
+            <nav className="navbar ">
+                <div className="container-fluid">
+                    <form className={styles.navbar__form} role="search">
+                        <input
+                            className="form-control  me-2"
+                            type="search"
+                            name="search"
+                            placeholder="buscar"
+                            aria-label="buscar"
+                            value={search}
+                            onChange={searcher}
+                        />
+                        <button
+                            onClick={handleSearch}
+                            className="btn btn-light me-2 "
+                            type="submit"
+                        >
+                            <i className="bi bi-search-heart-fill"></i>
+                        </button>
+                        <Link>
+                            <button
+                                className="btn btn-light me-2 d-flex"
+                                type="submit"
+                            >
+                                <i className="bi bi-bag-heart me-1"></i>
+                                <span>0</span>
+                            </button>
+                        </Link>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    );
+};
+
+export default Navbar;

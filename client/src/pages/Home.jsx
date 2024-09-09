@@ -8,7 +8,7 @@ const Home = () => {
     if (loading) {
         return <p>Cargando...</p>; // Mostrar mientras los datos están cargándose
     }
-
+    
     return (
         <div>
             <p>

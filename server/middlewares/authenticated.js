@@ -1,8 +1,8 @@
 const jwt = require('../utils/jwt') ;
-function asureAuth(req,res,netx) {
+function asureAuth(req,res,next) {
      //verifica que llegue el token
      if(!req.headers.authorization) {
-          res.status(403).send({msg: 'ERROR la peticion o tiene cabecera'}) ;
+          return res.status(403).send({msg: 'ERROR la peticion o tiene cabecera'}) ;
      };
      
      //eliminar palabra bearer
@@ -18,13 +18,13 @@ function asureAuth(req,res,netx) {
 
           //validacion expiracion
           if(exp <=  currentData) {
-               res.status(400).send({msg: 'El token ha expirado'}) ;
+               return res.status(400).send({msg: 'El token ha expirado'}) ;
           }
 
           req.user = payload ;
-          netx() ;
+          next() ;
      } catch (error) {
-          res.status(400).send({msg: 'ERROR Token invalido'}) ;
+          return res.status(400).send({msg: 'ERROR Token invalido'}) ;
      }
 }
 
