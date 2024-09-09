@@ -1,0 +1,33 @@
+.socialNetworks {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     border-radius: 5px;
+     background-color: white;
+     border: 1px solid rgb(227, 11, 235);
+     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+     margin: 10px;
+     padding: 8px;
+ }
+ .socialNetworks__redes {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+ }
+ .socialNetworks__logo {
+     width: 60px;
+     height: 60px;
+     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+ }
+ 
+ .socialNetworks__redes__redSocial {
+     border: 1px solid white;
+     padding: 15px;
+     margin: 5px;
+     border-radius: 50px;
+     background-color: rgb(227, 11, 235);
+     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+ }
+ 

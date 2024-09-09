@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import AllProducts from "./AllProducts";
+import SocialNetworks from "../components/SocialNetworks";
 
 const Home = () => {
     const { user, loading } = useContext(AuthContext);
@@ -8,7 +9,7 @@ const Home = () => {
     if (loading) {
         return <p>Cargando...</p>; // Mostrar mientras los datos están cargándose
     }
-    
+
     return (
         <div>
             <p>
@@ -22,6 +23,10 @@ const Home = () => {
             {/*Todos los productos*/}
             <div>
                 <AllProducts />
+            </div>
+            {/* redes sociales */}
+            <div>
+                <SocialNetworks />
             </div>
         </div>
     );
