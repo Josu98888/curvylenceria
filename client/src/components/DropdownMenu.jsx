@@ -23,7 +23,10 @@ const DropdownMenu = ({onCloseMenu}) => {
                     </Link>
                 </li>
                 <li className={styles.dropdownMenu__li}>
-                    <Link className={styles.dropdownMenu__text} to={'/offers'} onClick={onCloseMenu}>ofertas</Link>
+                    <Link className={styles.dropdownMenu__text} to={'/offers'} onClick={onCloseMenu}>Ofertas</Link>
+                </li>
+                <li className={styles.dropdownMenu__li}>
+                    <Link className={styles.dropdownMenu__text} to={'/aboutUs'} onClick={onCloseMenu}>Nosotros</Link>
                 </li>
             </ul>
         </div>

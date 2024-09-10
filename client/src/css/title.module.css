@@ -1,0 +1,10 @@
+.title {
+     color: rgb(227, 11, 235);
+     font-size: 35px;
+     margin: 5px;
+     text-align: center;
+}
+.text {
+     color: blueviolet;
+     text-align: center;
+}

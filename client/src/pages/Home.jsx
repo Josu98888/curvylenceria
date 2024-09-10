@@ -4,6 +4,7 @@ import SocialNetworks from "../components/SocialNetworks";
 import SliderProducts from "../components/SliderProduct";
 import Offers from "./Offers";
 import ButtonAll from "../components/ButtonAll";
+import ContactUs from "../components/ContactUs";
 
 const Home = () => {
     const { user, loading } = useContext(AuthContext);
@@ -27,7 +28,11 @@ const Home = () => {
                 <SliderProducts />
             </div>
             <div>
-            <ButtonAll route={'/products'} title={'Todos los productos'}/>
+                <ButtonAll route={"/products"} title={"Todos los productos"} />
+            </div>
+            {/* redes sociales */}
+            <div>
+                <SocialNetworks />
             </div>
             {/* ofertas */}
             <div>
@@ -35,11 +40,10 @@ const Home = () => {
             </div>
             {/* Boton todas las offertas */}
             <div>
-            <ButtonAll route={'/offers'} title={'Todas las ofertas'}/>
+                <ButtonAll route={"/offers"} title={"Todas las ofertas"} />
             </div>
-            {/* redes sociales */}
             <div>
-                <SocialNetworks />
+                <ContactUs />
             </div>
         </div>
     );

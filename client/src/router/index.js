@@ -13,6 +13,7 @@ import Product from '../pages/Product';
 import SearchResults from '../pages/SearchResults';
 import Offers from '../pages/Offers';
 import Favorites from '../pages/Favorites';
+import AboutUs from '../pages/AboutUs';
 
 
 //crea un enrutador del navegador
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
             {
                 path: '/favorites',
                 element: <Favorites />,
+            },
+            {
+                path: '/aboutUs',
+                element: <AboutUs />,
             },
         ]
     },
