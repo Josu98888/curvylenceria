@@ -15,6 +15,7 @@ import Offers from '../pages/Offers';
 import Favorites from '../pages/Favorites';
 import AboutUs from '../pages/AboutUs';
 import { CartShoppingProvider } from '../context/CartShoppingContext';
+import CartShopping from '../pages/CartShopping';
 
 
 //crea un enrutador del navegador
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
             {
                 path: '/aboutUs',
                 element: <AboutUs />,
+            },
+            {
+                path: '/cartShopping',
+                element: <CartShopping />,
             },
         ]
     },

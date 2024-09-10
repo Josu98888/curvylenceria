@@ -1,0 +1,6 @@
+.cartShopping__containerTotal {
+     display: flex;
+     align-items: center;
+     margin: 10px;
+     color: rgb(227, 11, 235);
+}

@@ -61,7 +61,7 @@ const Navbar = () => {
                         >
                             <i className="bi bi-search-heart-fill"></i>
                         </button>
-                        <Link>
+                        <Link to={"/cartShopping"}>
                             <button
                                 className="btn btn-light me-2 d-flex"
                                 type="submit"
