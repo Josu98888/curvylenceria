@@ -58,8 +58,16 @@
     align-items: center;
 }
  .cardProduct__link {
-     color: white;
-     text-decoration: none;
+    margin: 4px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white; 
  }
+ .cardProduct__text {
+    margin: 3px;
+    color: rgb(227, 11, 235) ;
+    padding: 3px;
+}
  
  

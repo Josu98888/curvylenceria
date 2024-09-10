@@ -14,30 +14,33 @@ import SearchResults from '../pages/SearchResults';
 import Offers from '../pages/Offers';
 import Favorites from '../pages/Favorites';
 import AboutUs from '../pages/AboutUs';
+import { CartShoppingProvider } from '../context/CartShoppingContext';
 
 
 //crea un enrutador del navegador
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <AuthProvider> <Layout /> </AuthProvider>,
+        element: <AuthProvider> <CartShoppingProvider>
+            <Layout />
+        </CartShoppingProvider> </AuthProvider>,
         errorElement: <Error404 />,
         children: [
             {
                 path: '/',
-                element:<Home />,
+                element: <Home />,
             },
             {
                 path: '/registerForm',
-                element:<RegisterForm />,
+                element: <RegisterForm />,
             },
             {
                 path: '/loginForm',
-                element:<LoginForm />,
+                element: <LoginForm />,
             },
             {
                 path: '/perfilUser',
-                element: <PerfilUser /> ,
+                element: <PerfilUser />,
             },
             {
                 path: '/forgotPassword',

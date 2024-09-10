@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState } from "react";
 import styles from "../css/navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { getProductsFetch } from "../api/getProductsFetch";
+import { CartContext } from "../context/CartShoppingContext";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
+    const { cart } = useContext(CartContext);
 
     useEffect(() => {
         getProductsFetch()
@@ -17,6 +19,9 @@ const Navbar = () => {
     const searcher = (e) => { 
         setSearch(e.target.value);
     };
+    const quantity = cart.reduce((acc, curr) => {
+        return acc + curr.quantity;
+    }, 0);
     // metodo de filtrado
     const handleSearch = (e) => {
         e.preventDefault();
@@ -62,7 +67,7 @@ const Navbar = () => {
                                 type="submit"
                             >
                                 <i className="bi bi-bag-heart me-1"></i>
-                                <span>0</span>
+                                <span>{quantity}</span>
                             </button>
                         </Link>
                     </form>
