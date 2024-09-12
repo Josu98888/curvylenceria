@@ -1,0 +1,8 @@
+.errorValidation, .successValidation {
+     width: 80%;
+     font-size: 10px;
+     color: red;
+} 
+.successValidation {
+     color: green;
+}

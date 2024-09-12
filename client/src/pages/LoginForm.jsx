@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/registerForm.module.css";
+import style from '../css/validation.module.css' ;
 import { loginFetch } from "../api/loginFetch";
 import { AuthContext } from "../context/AuthContext";
 
 const LoginForm = () => {
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
-
+    const [error, setError] = useState('') ;
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -31,7 +32,7 @@ const LoginForm = () => {
             localStorage.setItem("access", access);
             navigate("/");
         } catch (error) {
-            throw error;
+            setError(error.msg) ;
         }
     };
     return (
@@ -47,8 +48,6 @@ const LoginForm = () => {
                     </div>
                     {/* inputs */}
                     <div className={styles.loginUser__containerInputs}>
-                        {/* mensaje error */}
-                        {/* <p ref={alertNameRef} className={`text-danger d-none ${styles.msgError}`} id={styles.form__error} ></p> */}
                         {/* email */}
                         <div className={styles.loginUser__containerInput}>
                             <i
@@ -64,8 +63,6 @@ const LoginForm = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        {/* mensaje error */}
-                        {/* <p ref={alertEmailRef} className={`text-danger d-none ${styles.msgError}`} id={styles.form__error}></p> */}
                         {/* contraseña */}
                         <div className={styles.loginUser__containerInput}>
                             <i
@@ -80,6 +77,7 @@ const LoginForm = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
+                        {error && <p className={style.errorValidation} >{error}</p>}
                     </div>
                     {/* recuperar contraseña */}
                     <p className={styles.loginUser__forgotPass}>
@@ -104,8 +102,6 @@ const LoginForm = () => {
                             Iniciar sesión
                         </button>
                     </div>
-                    {/* mensaje error */}
-                    {/* <div ref={alertSuccessRef} className="alert alert-success ms-2 fs-6 d-none" ></div> */}
                 </div>
             </div>
         </form>

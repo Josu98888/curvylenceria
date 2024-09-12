@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import styles from "../css/registerForm.module.css";
+import style from '../css/validation.module.css' ;
 import { Link, useNavigate } from "react-router-dom";
 import { registerFetch } from "../api/registerFetch";
+import {validateEmail,validatePassword,validateUsername} from "../utils/validations";
 
 const RegisterForm = () => {
     const navigate = useNavigate() ;
-
+    const [errors, setErrors] = useState({});
+    const [success, setSuccess] = useState('') ;
     const [formData, setFormData] = useState({
         firstname: "",
         email: "",
         password: "",
     });
-
     const { firstname, email, password } = formData;
+
+    const emailError = validateEmail(email);
+    const passwordError = validatePassword(password);
+    const usernameError = validateUsername(firstname);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -24,12 +30,25 @@ const RegisterForm = () => {
 
         const handleSubmit = async (e) => {
             e.preventDefault();
-            try {
-                const res = await registerFetch(formData);
-                console.log(res);
-                navigate('/loginForm')
-            } catch (error) {
-               throw error ;
+
+            if (emailError || passwordError || usernameError) {
+                setErrors({
+                    email: emailError,
+                    password: passwordError,
+                    username: usernameError,
+                });
+            } else {
+                try {
+                    const res = await registerFetch(formData);
+                    console.log(res);
+                    setErrors({}) ;
+                    setSuccess(res.msg) ;
+                    setTimeout(() => {
+                        navigate('/loginForm');
+                    }, 3000);
+                } catch (error) {
+                   throw error ;
+                }
             }
         };
     return (
@@ -57,8 +76,7 @@ const RegisterForm = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        {/* mensaje error */}
-                        {/* <p ref={alertNameRef} className={`text-danger d-none ${styles.msgError}`} id={styles.form__error} ></p> */}
+                        {errors.username && <p className={style.errorValidation} >{errors.username}</p>}
                         {/* email */}
                         <div className={styles.loginUser__containerInput}>
                             <i
@@ -74,8 +92,7 @@ const RegisterForm = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        {/* mensaje error */}
-                        {/* <p ref={alertEmailRef} className={`text-danger d-none ${styles.msgError}`} id={styles.form__error}></p> */}
+                        {errors.email && <p className={style.errorValidation} >{errors.email}</p>}
                         {/* contraseña */}
                         <div className={styles.loginUser__containerInput}>
                             <i
@@ -90,6 +107,8 @@ const RegisterForm = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
+                        {errors.password && <p className={style.errorValidation} >{errors.password}</p>}
+                        {success && <p className={style.successValidation} >{success}</p>}
                     </div>
                     {/* botones para elegir ruta login o register */}
                     <div className={styles.loginUser__containerBtns}>
@@ -102,8 +121,6 @@ const RegisterForm = () => {
                             </button>
                         </Link>
                     </div>
-                    {/* mensaje error */}
-                    {/* <div ref={alertSuccessRef} className="alert alert-success ms-2 fs-6 d-none" ></div> */}
                 </div>
             </div>
         </form>

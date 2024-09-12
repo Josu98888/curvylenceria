@@ -16,7 +16,9 @@ export const loginFetch = async (data) => {
           const response = await fetch(url,params) ;
           const request = await response.json() ;
 
-          if(response.status !== 200) throw response ;
+          if (!response.ok) {
+               throw request;  // Aquí lanzamos el cuerpo del error que contiene el msg
+             }
 
           return request ;
      } catch (error) {

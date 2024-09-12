@@ -45,16 +45,11 @@
 .loginUser__containerInput {
     width: 80%;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     background-color: white;
     border-radius: 6px;
-}
-.msgError {
-    font-size: 12px;
-    height: 12px;
-    margin-inline: 10px;
 }
 .loginUser__input {
     background: transparent;
@@ -67,7 +62,7 @@
     color: violet;
 }
 .loginUser__forgotPass {
-    margin-top: 5px;
+    margin-top: 2px;
     padding-left: 25px;
     font-size: 10px;
     color: white;

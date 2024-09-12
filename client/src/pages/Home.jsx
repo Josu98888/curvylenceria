@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <div>
             <p>
-                Bienvenido{" "}
+                Bienvenid❤️{" "}
                 {user?.firstname ? (
                     <span>{user.firstname}</span> // Solo muestra el nombre si el usuario está autenticado
                 ) : (
