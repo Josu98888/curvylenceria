@@ -1,6 +1,11 @@
 .cartShopping__containerTotal {
      display: flex;
      align-items: center;
+     justify-content: center;
      margin: 10px;
-     color: rgb(227, 11, 235);
+     background-color: rgb(227, 11, 235);
+     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235)) ;
+     border-radius: 5px;
+     border: 2px solid white;
+     color: white;
 }
