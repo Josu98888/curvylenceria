@@ -1,0 +1,20 @@
+.cardsWrapper {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr); /* 2 columnas por defecto en pantallas pequeñas */
+     gap: 6px;
+ }
+ 
+ /* Responsivo para tablet */
+ @media (min-width: 426px) and (max-width: 768px) {
+     .cardsWrapper {
+         grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+     }
+ }
+ 
+ /* Responsivo para desktop */
+ @media (min-width: 769px) {
+     .cardsWrapper {
+         grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+     }
+ }
+ 

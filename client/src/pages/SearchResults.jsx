@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import CardProduct from "../components/CardProduct";
 import PaginatedComponent from "../components/PaginatedComponent";
+import styles from '../css/containerProducts.module.css' ;
 
 
 const SearchResults = () => {
@@ -19,11 +20,11 @@ const SearchResults = () => {
                     items={products} // Los productos a paginar
                     itemsPerPage={6} // Cantidad de productos por página
                     render={(currentProducts) => (
-                        <div>
+                        <div className={styles.cardsWrapper}>
                             {currentProducts.map((item) => (
                                 <div
                                     key={item._id}
-                                    className="col-6 col-md-4 col-lg-3"
+                                    className={styles.cardsContainer}
                                 >
                                     <CardProduct item={item} />
                                 </div>

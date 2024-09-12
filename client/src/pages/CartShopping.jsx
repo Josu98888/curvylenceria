@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartShoppingContext";
-import styles from '../css/cartShopping.module.css' ;
+import styles from '../css/containerProducts.module.css' ;
 import CardProduct from "../components/CardProduct";
 import PaginatedComponent from "../components/PaginatedComponent";
 
@@ -19,11 +19,11 @@ const CartShopping = () => {
                 items={cart} // Los productos a paginar
                 itemsPerPage={6} // Cantidad de productos por página
                 render={(currentProducts) => (
-                    <div>
+                    <div className={styles.cardsWrapper}>
                         {currentProducts.map((item) => (
                             <div
                                 key={item._id}
-                                className="col-6 col-md-4 col-lg-3"
+                                className={styles.cardsContainer}
                             >
                                 <CardProduct item={item} />
                             </div>

@@ -1,21 +1,22 @@
 .products_title {
-     color: rgb(227, 11, 235);
-     font-size: 35px;
-     text-align: center;
- }
- .cardProduct {
-     border-radius: 5px;
-     color: rgb(227, 11, 235);
-     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
-     margin: 2px;
-     padding: 8px;
- }
- .cardProduct__title {
-     color: rgb(227, 11, 235);
-     font-size:small;
-     text-align: center;
- }
- .cardProduct__containerPriceAndFav{
+    color: rgb(227, 11, 235);
+    font-size: 35px;
+    text-align: center;
+}
+.cardProduct {
+    /* display: flex;
+    flex-direction: column; */
+    border-radius: 5px;
+    color: rgb(227, 11, 235);
+    filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+    padding: 8px;
+}
+.cardProduct__title {
+    color: rgb(227, 11, 235);
+    font-size: small;
+    text-align: center;
+}
+.cardProduct__containerPriceAndFav {
     color: rgb(227, 11, 235);
     margin: 0 10px 0 10px;
     display: flex;
@@ -33,22 +34,23 @@
     display: none;
 }
 
-#favorite:active{
+#favorite:active {
     color: rgb(227, 11, 235);
     display: block;
 }
 
-.cardProduct__price, .cardProduct__priceOld {
+.cardProduct__price,
+.cardProduct__priceOld {
     border: 1px solid rgb(227, 11, 235);
     border-radius: 2px;
     padding: 2px;
     font-size: 12px;
 }
-.cardProduct__priceOld  {
+.cardProduct__priceOld {
     border: none;
 }
 .cardPoduct__containerCart {
-    background-color:rgb(227, 11, 235) ;
+    background-color: rgb(227, 11, 235);
     border: 1px solid white;
     border-radius: 5px;
     color: white;
@@ -57,17 +59,15 @@
     justify-content: center;
     align-items: center;
 }
- .cardProduct__link {
+.cardProduct__link {
     margin: 4px;
     background-color: transparent;
     border: 1px solid white;
     border-radius: 5px;
-    color: white; 
- }
- .cardProduct__text {
+    color: white;
+}
+.cardProduct__text {
     margin: 3px;
-    color: rgb(227, 11, 235) ;
+    color: rgb(227, 11, 235);
     padding: 3px;
 }
- 
- 
