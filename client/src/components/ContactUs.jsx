@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import {validateEmail,validateMessage,validateUsername} from "../utils/validations";
 import emailjs from "@emailjs/browser";
 import styles from "../css/contactUs.module.css";
-import style from '../css/validation.module.css'
+import style from '../css/validation.module.css';
+import styleTitle from '../css/title.module.css' ;
 
 const ContactUs = () => {
     const refForm = useRef();
@@ -55,7 +56,7 @@ const ContactUs = () => {
             onSubmit={handleSubmit}
             className={styles.form}
         >
-            <h2> Contactanos</h2>
+            <h2 className={styleTitle.title}> Contactanos</h2>
             <input
                 className={styles.form__input}
                 id="userName"

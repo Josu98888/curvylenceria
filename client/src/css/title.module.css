@@ -1,10 +1,22 @@
 .title {
-     color: rgb(227, 11, 235);
+     /* background: #ccc; */
+     background: radial-gradient(#df88be,rgb(227, 11, 235));
+     font-family: system-ui;
+     /* color: rgb(227, 11, 235); */
      font-size: 35px;
      margin: 5px;
      text-align: center;
+     -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;
+     background-clip:none;
+}
+.containerText {
+     margin: 4px;
+     padding: 4px;
 }
 .text {
-     color: blueviolet;
+     margin: 4px;
+     font-size: 18px;
+     color: rgb(227, 11, 235);
      text-align: center;
 }

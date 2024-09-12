@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "../css/socialNetworks.module.css";
+import styleTitle from '../css/title.module.css' ;
 
 const SocialNetworks = () => {
     return (
         <div className={styles.socialNetworks}>
-            <h1>Seguinos en redes</h1>
+            <h1 className={styleTitle.title}>Seguinos en redes</h1>
             <div className={styles.socialNetworks__logo}>
             </div>
             <div className={styles.socialNetworks__redes}>

@@ -5,6 +5,7 @@ import SliderProducts from "../components/SliderProduct";
 import Offers from "./Offers";
 import ButtonAll from "../components/ButtonAll";
 import ContactUs from "../components/ContactUs";
+import styleTitle from '../css/title.module.css' ;
 
 const Home = () => {
     const { user, loading } = useContext(AuthContext);
@@ -15,14 +16,14 @@ const Home = () => {
 
     return (
         <div>
-            <p>
+            <h1 className={styleTitle.text}>
                 Bienvenid❤️{" "}
                 {user?.firstname ? (
                     <span>{user.firstname}</span> // Solo muestra el nombre si el usuario está autenticado
                 ) : (
                     <span>Invitado</span> // Si no hay usuario, muestra algo más
                 )}
-            </p>
+            </h1>
             {/* destacados */}
             <div>
                 <SliderProducts />

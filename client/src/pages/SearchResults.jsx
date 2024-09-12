@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import CardProduct from "../components/CardProduct";
 import PaginatedComponent from "../components/PaginatedComponent";
 import styles from '../css/containerProducts.module.css' ;
+import styleTitle from '../css/title.module.css' ;
 
 
 const SearchResults = () => {
@@ -14,7 +15,7 @@ const SearchResults = () => {
 
     return (
         <div>
-            <h2>Resultados de la búsqueda</h2>
+            <h2 className={styleTitle.title}>Resultados de la búsqueda</h2>
             <div className="product-list">
                 <PaginatedComponent
                     items={products} // Los productos a paginar

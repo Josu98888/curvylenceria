@@ -3,6 +3,7 @@ import { getProductsFetch } from '../api/getProductsFetch';
 import CardProduct from "./CardProduct";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import styleTitle from '../css/title.module.css' ;
 
 
 const SliderProducts = () => {
@@ -31,7 +32,7 @@ const SliderProducts = () => {
     const outstanding = products.filter(e => e.outstanding === true);
     return (
         <div>
-            <h2>Destacados</h2>
+            <h2 className={styleTitle.title}>Destacados</h2>
             <Carousel responsive={responsive}>
             {outstanding.map((item) => (
             <div key={item._id} >

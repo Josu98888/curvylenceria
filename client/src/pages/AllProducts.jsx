@@ -3,6 +3,7 @@ import CardProduct from "../components/CardProduct";
 import styles from '../css/containerProducts.module.css'
 import { getProductsFetch } from "../api/getProductsFetch";
 import PaginatedComponent from "../components/PaginatedComponent";
+import styleTitle from '../css/title.module.css' ;
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
@@ -15,7 +16,7 @@ const AllProducts = () => {
 
     return (
         <div>
-            <h2>Todos los productos</h2>
+            <h2 className={styleTitle.title}>Todos los productos</h2>
             <PaginatedComponent
                 items={products} // Los productos a paginar
                 itemsPerPage={6} // Cantidad de productos por página

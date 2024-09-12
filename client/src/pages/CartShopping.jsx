@@ -3,6 +3,7 @@ import { CartContext } from "../context/CartShoppingContext";
 import styles from '../css/containerProducts.module.css' ;
 import CardProduct from "../components/CardProduct";
 import PaginatedComponent from "../components/PaginatedComponent";
+import styleTitle from '../css/title.module.css' ;
 
 const CartShopping = () => {
     const { cart } = useContext(CartContext);
@@ -33,7 +34,7 @@ const CartShopping = () => {
             />
             </div>
             <div className={styles.cartShopping__containerTotal}>
-                <h1>Total: ${totalPrice} </h1>
+                <h1 className={styleTitle.title}>Total: ${totalPrice} </h1>
             </div>
         </div>
     );
