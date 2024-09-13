@@ -8,5 +8,6 @@ const api = express.Router() ;
 //se crean las rutas
 api.post('/auth/register', AuthController.register) ;
 api.post('/auth/login', AuthController.login) ;
+api.patch('/auth/changePassword', AuthController.changePassword) ;
 
 module.exports = api ;

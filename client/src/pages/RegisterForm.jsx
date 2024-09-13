@@ -45,7 +45,7 @@ const RegisterForm = () => {
                     setSuccess(res.msg) ;
                     setTimeout(() => {
                         navigate('/loginForm');
-                    }, 3000);
+                    }, 2000);
                 } catch (error) {
                    throw error ;
                 }

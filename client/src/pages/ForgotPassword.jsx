@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "../css/registerForm.module.css";
+import style from "../css/validation.module.css";
+import { changePasswordFetch } from "../api/changePasswordFetch";
+import { validatePassword } from "../utils/validations";
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
-
+    const [error, setErrors] = useState("");
+    const [success, setSuccess] = useState("");
     const [formData, setFormData] = useState({
         email: "",
-        password: "",
+        oldPassword: "",
+        newPassword: "",
     });
 
-    const { email, password } = formData;
+    const { email, newPassword, oldPassword } = formData;
+
+    const passwordError = validatePassword(newPassword);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -22,10 +29,22 @@ const ForgotPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            navigate("/");
-        } catch (error) {
-            throw error;
+
+        if (passwordError) {
+            setErrors({ passwordError: passwordError });
+        } else {
+            try {
+                const token = localStorage.getItem("access");
+                const result = await changePasswordFetch(formData, token);
+                console.log(result);
+                setErrors({});
+                setSuccess(result.msg);
+                setTimeout(() => {
+                    navigate("/loginForm");
+                }, 2000);
+            } catch (error) {
+                setErrors({ passwordError: error.msg });
+            }
         }
     };
     return (
@@ -34,9 +53,7 @@ const ForgotPassword = () => {
                 <div className={styles.containerloginUser}>
                     {/* titulo */}
                     <div className={styles.loginUser__containerTitle}>
-                        <h1 className={styles.loginUser__title}>
-                            Usuario
-                        </h1>
+                        <h1 className={styles.loginUser__title}>Usuario</h1>
                         <div className={styles.loginUser__underline}></div>
                     </div>
                     {/* inputs */}
@@ -62,9 +79,9 @@ const ForgotPassword = () => {
                             <input
                                 className={styles.loginUser__input}
                                 type="password"
-                                placeholder="contraseña"
-                                name="password"
-                                value={password}
+                                placeholder="Contraseña actual"
+                                name="oldPassword"
+                                value={oldPassword}
                                 onChange={handleInputChange}
                             />
                         </div>
@@ -75,20 +92,23 @@ const ForgotPassword = () => {
                             <input
                                 className={styles.loginUser__input}
                                 type="password"
-                                placeholder="contraseña"
-                                name="password"
-                                value={password}
+                                placeholder="Nueva contraseña"
+                                name="newPassword"
+                                value={newPassword}
                                 onChange={handleInputChange}
                             />
                         </div>
+                        {error.passwordError &&  <p className={style.errorValidation}>{error.passwordError}</p>}
+                        {success && <p className={style.successValidation} >{success}</p>}
                     </div>
                     {/* botones para cambiar contraseña*/}
                     <div className={styles.loginUser__containerBtns}>
-                        <Link to={`/loginForm`}>
-                            <button className={styles.loginUser__button}>
-                                Cambiar contraseña
-                            </button>
-                        </Link>
+                        <button
+                            className={styles.loginUser__button}
+                            type="submit"
+                        >
+                            Cambiar contraseña
+                        </button>
                     </div>
                 </div>
             </div>
@@ -96,4 +116,4 @@ const ForgotPassword = () => {
     );
 };
 
-export default ForgotPassword ;
+export default ForgotPassword;
