@@ -1,8 +1,9 @@
 import React from 'react' ;
 import { useFavoriteContext } from '../context/Favorites';
 
-const BlockFavorite = ({item}) => {
+const BlockFavorite = ({item, _size}) => {
      const { favorite, addFavorite } = useFavoriteContext();
+     const size = _size ;
 
      const isFavorite = favorite.some((fav) => fav._id === item._id);
 
@@ -11,10 +12,11 @@ const BlockFavorite = ({item}) => {
              {isFavorite ? (
                  <i
                      className="bi bi-heart-fill"
-                     style={{ color: "red" }}
+                     style={{ color: "red", fontSize: size }}
                  ></i>
              ) : (
-                 <i className="bi bi-heart"></i>
+                 <i className="bi bi-heart"
+                 style={{ fontSize: size }}></i>
              )}
          </div>
      );

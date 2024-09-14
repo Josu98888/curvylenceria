@@ -31,17 +31,6 @@
     color: rgb(227, 11, 235);
     display: block;
 }
-
-.cardProduct__price,
-.cardProduct__priceOld {
-    border: 1px solid rgb(227, 11, 235);
-    border-radius: 2px;
-    padding: 2px;
-    font-size: 12px;
-}
-.cardProduct__priceOld {
-    border: none;
-}
 .cardPoduct__containerCart {
     background-color: rgb(227, 11, 235);
     border: 1px solid white;

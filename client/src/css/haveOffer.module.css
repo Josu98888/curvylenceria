@@ -1,0 +1,15 @@
+.haveOffer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.haveOffer__price , .haveOffer__priceOld  {
+    border: 1px solid rgb(227, 11, 235);
+    border-radius: 2px; 
+    /* padding: 10px; */
+}
+.haveOffer__priceOld  {
+    border: none;
+    text-decoration-line: line-through;
+}
+

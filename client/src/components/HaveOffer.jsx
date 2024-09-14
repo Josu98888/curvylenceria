@@ -1,20 +1,24 @@
 import React from "react";
-import styles from '../css/cardProduct.module.css' ;
+import styles from '../css/haveOffer.module.css' ;
 
-const HaveOffer = ({ item }) => {
+const HaveOffer = ({ item, _size }) => {
     const { price, discount, offer } = item;
     const priceOffer = price - (price * discount) / 100;
+    const size = _size ;
 
     return offer === true ? (
-        <div className="d-flex">
-            <p className={styles.cardProduct__price}>
+        <div className={styles.haveOffer}>
+            <p className={styles.haveOffer__price} 
+            style={{fontSize: size}}>
                 {" "}
                 $ {Math.ceil(priceOffer)}
             </p>
-            <s className={styles.cardProduct__priceOld}> $ {price} </s>
+            <p className={styles.haveOffer__priceOld} 
+            style={{fontSize: size}}> $ {price} </p>
         </div>
     ) : (
-        <p className={styles.cardProduct__price}> ${priceOffer}</p>
+        <p className={styles.haveOffer__price} 
+        style={{fontSize: size}}> ${priceOffer}</p>
     );
 };
 

@@ -78,8 +78,8 @@ function Product() {
                 />
                 <h1 className={styles.product__title}> {title} </h1>
                 <div className={styles.product__containerPriceAndFav}>
-                    <HaveOffer item={product} />
-                    <BlockFavorite item={product} />
+                    <HaveOffer item={product} _size={"25px"}/>
+                    <BlockFavorite item={product} _size={"25px"}/>
                 </div>
                 <div>
                     <p className={styles.product__text}>{description}</p>
