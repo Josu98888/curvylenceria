@@ -8,7 +8,7 @@ import EmptyComponent from "../components/EmptyComponent";
 
 const Favorites = () => {
     const { favorite } = useFavoriteContext();
-    const text = 'Seleccione productos como favoritos y apareceran aquí.' ;
+    const text = 'Para ver tus productos favoritos, simplemente selecciona los que más te gusten haciendo clic en el botón con el ícono de corazón que aparece en cada producto. Una vez seleccionado, los productos aparecerán aquí para que puedas acceder a ellos fácilmente en cualquier momento. ¡Elige tus favoritos y disfrútalos cuando quieras!' ;
 
     return (
         <div>

@@ -5,26 +5,22 @@ import Error404 from '../pages/Error';
 import RegisterForm from '../pages/RegisterForm';
 import LoginForm from '../pages/LoginForm';
 import ForgotPassword from '../pages/ForgotPassword';
-import { AuthProvider } from '../context/AuthContext';
 import PerfilUser from '../pages/PerfilUser';
 import AllProducts from '../pages/AllProducts';
-import { getProductFetch } from '../api/getProductFetch';
 import Product from '../pages/Product';
 import SearchResults from '../pages/SearchResults';
 import Offers from '../pages/Offers';
 import Favorites from '../pages/Favorites';
 import AboutUs from '../pages/AboutUs';
-import { CartShoppingProvider } from '../context/CartShoppingContext';
 import CartShopping from '../pages/CartShopping';
+
 
 
 //crea un enrutador del navegador
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <AuthProvider> <CartShoppingProvider>
-            <Layout />
-        </CartShoppingProvider> </AuthProvider>,
+        element: <Layout />,
         errorElement: <Error404 />,
         children: [
             {
@@ -54,7 +50,7 @@ export const router = createBrowserRouter([
             {
                 path: '/products/:_id',
                 element: <Product />,
-                loader: getProductFetch,
+                // loader: getProductFetch,
             },
             {
                 path: '/search',

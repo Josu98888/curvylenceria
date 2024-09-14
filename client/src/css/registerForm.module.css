@@ -71,6 +71,11 @@
     color: white;
     cursor: pointer;
 }
+.loginUser__text {
+    margin: 5px;
+    padding: 5px;
+    color: white;
+}
 .loginUser__containerBtns {
     display: flex;
     margin: 30px auto;

@@ -25,7 +25,8 @@ const PerfilUser = () => {
                     </h1>
                     <div className={styles.loginUser__underline}></div>
                 </div>
-
+                {/* texto  */}
+                <p className={styles.loginUser__text}>Nos alegra mucho tenerte aquí. Esperamos que disfrutes de la experiencia y encuentres justo lo que estás buscando. ¡Explora nuestros productos, agrega tus favoritos al carrito y no dudes en contactarnos si necesitas ayuda! ¡Gracias por ser parte de nuestra comunidad!</p>
                 {/* botones para elegir ruta login o register */}
                 <div className={styles.loginUser__containerBtns}>
                     <button className={styles.loginUser__button} onClick={handleLogout}>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../css/navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { getProductsFetch } from "../api/getProductsFetch";
@@ -16,7 +16,7 @@ const Navbar = () => {
             .catch((error) => console.log(error));
     }, []);
 
-    const searcher = (e) => { 
+    const searcher = (e) => {
         setSearch(e.target.value);
     };
     const quantity = cart.reduce((acc, curr) => {
@@ -42,9 +42,9 @@ const Navbar = () => {
     };
     return (
         <div className={styles.navbar}>
-            <nav className="navbar ">
-                <div className="container-fluid">
-                    <form className={styles.navbar__form} role="search">
+            <nav className="navbar">
+                <div className={styles.navbar__form}>
+                    <form className="d-flex" role="search">
                         <input
                             className="form-control  me-2"
                             type="search"
@@ -56,23 +56,20 @@ const Navbar = () => {
                         />
                         <button
                             onClick={handleSearch}
-                            className="btn btn-light me-2 "
+                            className={`btn btn-light me-2 ${styles.navbar__btn} `}
                             type="submit"
                         >
                             <i className="bi bi-search-heart-fill"></i>
                         </button>
-                        <Link to={"/cartShopping"}>
-                            <button
-                                className="btn btn-light me-2 d-flex"
-                                type="submit"
-                            >
-                                <i className="bi bi-bag-heart me-1"></i>
-                                <span>{quantity}</span>
-                            </button>
-                        </Link>
                     </form>
                 </div>
             </nav>
+            <Link className={styles.navbar__link} to={"/cartShopping"}>
+                <button className={`btn btn-light me-2 d-flex ${styles.navbar__btn}`}>
+                    <i className="bi bi-bag-heart me-1"></i>
+                    <span>{quantity}</span>
+                </button>
+            </Link>
         </div>
     );
 };
