@@ -31,17 +31,6 @@
      color: rgb(227, 11, 235);
      display: block;
  }
- 
- .product__price,
- .product__priceOld {
-     border: 1px solid rgb(227, 11, 235);
-     border-radius: 2px;
-     padding: 2px;
-     font-size: 12px;
- }
- .product__priceOld {
-     border: none;
- }
  .product__containerCart {
      background-color: rgb(227, 11, 235);
      border: 1px solid white;
@@ -63,4 +52,5 @@
      margin: 3px;
      color: rgb(227, 11, 235);
      padding: 3px;
+     font-size: 18px;
  }

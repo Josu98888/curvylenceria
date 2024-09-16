@@ -8,15 +8,23 @@ export const AuthProvider = ({ children }) => {
      const [loading, setLoading] = useState(true) ;
      useEffect(() => {
           (async () => {
-               const token = localStorage.getItem('access');
-               if(token) {
-                    await login(token);
+               try {
+                 const token = localStorage.getItem('access');
+                 if (token) {
+                   await login(token); // llama a login solo si hay token
+                 }
+               } catch (error) {
+                 console.error('Error durante la autenticación:', error);
+               } finally {
+                 setLoading(false); // loading se desactiva siempre
                }
-               setLoading(false) ;
-          })();
+             })();
      }, []);
 
      const login = async (token) => {
+          if(!token) {
+               return ;
+          }
           try {
                const user = await getMeFetch(token);
                delete user.password;

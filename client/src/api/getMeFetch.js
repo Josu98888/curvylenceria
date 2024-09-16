@@ -2,10 +2,13 @@ export const getMeFetch = async (token) => {
      try {
           const url = 'http://localhost:3933/api/v1/user/me' ;
 
+          if(token) {
+               throw new Error('Token no encontrado');
+          }
           const params = {
                method: 'GET',
                headers: {
-                    Authorization: `Bearer ${token}` ,
+                    Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
                },
           };

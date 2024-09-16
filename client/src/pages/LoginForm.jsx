@@ -28,7 +28,9 @@ const LoginForm = () => {
         e.preventDefault();
         try {
             const { access } = await loginFetch(formData);
-            login(access);
+            if(access) {
+                login(access);
+            }
             localStorage.setItem("access", access);
             navigate("/");
         } catch (error) {

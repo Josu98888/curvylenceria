@@ -56,10 +56,10 @@ const Navbar = () => {
                         />
                         <button
                             onClick={handleSearch}
-                            className={`btn btn-light me-2 ${styles.navbar__btn} `}
+                            className={`btn btn-light me-2 ${styles.navbar__btn}`}
                             type="submit"
                         >
-                            <i className="bi bi-search-heart-fill"></i>
+                            <i className={`bi bi-search-heart-fill`}></i>
                         </button>
                     </form>
                 </div>
