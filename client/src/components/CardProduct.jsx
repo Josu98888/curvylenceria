@@ -21,9 +21,9 @@ const CardProduct = ({ item }) => {
                 {/* contenedor favorito y precio */}
                 <div className={styles.cardProduct__containerPriceAndFav}>
                     {/* precio */}
-                    <HaveOffer item= {item} _size={"15px"}/>
+                    <HaveOffer item= {item} _size={"16px"}/>
                     {/* favorito */}
-                    <BlockFavorite item= {item} _size={"15px"} />
+                    <BlockFavorite item= {item} _size={"16px"} />
                 </div>
                 {/* ver producto*/}
                 <div className={styles.cardPoduct__containerCart} >

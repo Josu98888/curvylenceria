@@ -1,50 +1,71 @@
-.cardProduct {
-    border-radius: 5px;
-    color: rgb(227, 11, 235);
-    filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
-    padding: 8px;
+@media (min-width: 0) {
+    .cardProduct {
+        border-radius: 5px;
+        color: rgb(227, 11, 235);
+        filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+        padding: 8px;
+    }
+    .cardProduct__title {
+        color: rgb(227, 11, 235);
+        font-size: 16px;
+        text-align: center;
+    }
+    .cardProduct__containerPriceAndFav {
+        height: 100%;
+        color: rgb(227, 11, 235);
+        margin: 0 10px 0 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .buttonFavorite {
+        text-decoration: none;
+    }
+    #favorite {
+        color: rgb(227, 11, 235);
+        display: none;
+    }
+    #notFavorite:active {
+        background-color: rgb(227, 11, 235);
+        display: none;
+    }
+    
+    #favorite:active {
+        color: rgb(227, 11, 235);
+        display: block;
+    }
+    .cardPoduct__containerCart {
+        background-color: rgb(227, 11, 235);
+        border: 1px solid white;
+        border-radius: 5px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cardProduct__link {
+        text-decoration: none;
+        margin: 4px;
+        padding: 3px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 5px;
+        color: white;
+    }
+    
 }
-.cardProduct__title {
-    color: rgb(227, 11, 235);
-    font-size: small;
-    text-align: center;
+/* version tablet */
+@media (min-width: 768px) {
+    .cardProduct__title {
+        font-size: 18px;
+    }
 }
-.cardProduct__containerPriceAndFav {
-    color: rgb(227, 11, 235);
-    margin: 0 10px 0 10px;
-    display: flex;
-    justify-content: space-between;
-}
-.buttonFavorite {
-    text-decoration: none;
-}
-#favorite {
-    color: rgb(227, 11, 235);
-    display: none;
-}
-#notFavorite:active {
-    background-color: rgb(227, 11, 235);
-    display: none;
-}
-
-#favorite:active {
-    color: rgb(227, 11, 235);
-    display: block;
-}
-.cardPoduct__containerCart {
-    background-color: rgb(227, 11, 235);
-    border: 1px solid white;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.cardProduct__link {
-    margin: 4px;
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 5px;
-    color: white;
+@media (min-width: 1024px) {
+    .cardProduct__title {
+        font-size: 20px;
+    }
+    .cardProduct__link {
+        padding: 4px;
+        font-size: 18px;
+    }
 }
