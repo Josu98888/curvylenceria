@@ -1,22 +1,35 @@
-.title {
-     /* background: #ccc; */
-     background: radial-gradient(#df88be,rgb(227, 11, 235));
-     font-family: system-ui;
-     /* color: rgb(227, 11, 235); */
-     font-size: 35px;
-     margin: 5px;
-     text-align: center;
-     -webkit-text-fill-color: transparent;
-     -webkit-background-clip: text;
-     background-clip:none;
+@media (min-width: 0) {
+     .title {
+          background: radial-gradient(#df88be,rgb(227, 11, 235));
+          font-family: system-ui;
+          font-size: 30px;
+          margin: 5px;
+          text-align: center;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          background-clip:none;
+     }
+     .containerText {
+          margin: 4px;
+          padding: 4px;
+     }
+     .text {
+          margin: 4px;
+          font-size: 18px;
+          color: rgb(227, 11, 235);
+          text-align: center;
+     }
+     
 }
-.containerText {
-     margin: 4px;
-     padding: 4px;
+/* version tablet */
+@media (min-width: 768px) {
+     .title {
+          font-size: 35px;
+     }
 }
-.text {
-     margin: 4px;
-     font-size: 18px;
-     color: rgb(227, 11, 235);
-     text-align: center;
+@media (min-width: 1024px) {
+     .title {
+          font-size: 45px;
+          margin: 8px;
+     }
 }

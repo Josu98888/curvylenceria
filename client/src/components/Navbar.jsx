@@ -60,7 +60,7 @@ const Navbar = () => {
                         className={`btn btn-light me-2 ${styles.navbar__btn}`}
                         type="submit"
                     >
-                        <i className={`bi bi-search-heart-fill`}></i>
+                        <i className={`bi bi-search-heart-fill ${styles.navbar__icon}`}></i>
                     </button>
                 </form>
             </nav>
@@ -68,8 +68,8 @@ const Navbar = () => {
                 <button
                     className={`btn btn-light me-2 d-flex ${styles.navbar__btn}`}
                 >
-                    <i className="bi bi-bag-heart me-1"></i>
-                    <span>{quantity}</span>
+                    <i className={`bi bi-bag-heart me-1 ${styles.navbar__icon}`}></i>
+                    <span className={styles.navbar__icon}>{quantity}</span>
                 </button>
             </Link>
         </div>
