@@ -3,6 +3,7 @@ import styles from "../css/navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { getProductsFetch } from "../api/getProductsFetch";
 import { CartContext } from "../context/CartShoppingContext";
+import MenuLaptop from "./MenuLaptop";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
@@ -42,30 +43,31 @@ const Navbar = () => {
     };
     return (
         <div className={styles.navbar}>
+            <MenuLaptop />
             <nav className="navbar">
-                <div className={styles.navbar__form}>
-                    <form className="d-flex" role="search">
-                        <input
-                            className="form-control  me-2"
-                            type="search"
-                            name="search"
-                            placeholder="buscar"
-                            aria-label="buscar"
-                            value={search}
-                            onChange={searcher}
-                        />
-                        <button
-                            onClick={handleSearch}
-                            className={`btn btn-light me-2 ${styles.navbar__btn}`}
-                            type="submit"
-                        >
-                            <i className={`bi bi-search-heart-fill`}></i>
-                        </button>
-                    </form>
-                </div>
+                <form className={styles.navbar__form} role="search">
+                    <input
+                        className="form-control  me-2"
+                        type="search"
+                        name="search"
+                        placeholder="buscar"
+                        aria-label="buscar"
+                        value={search}
+                        onChange={searcher}
+                    />
+                    <button
+                        onClick={handleSearch}
+                        className={`btn btn-light me-2 ${styles.navbar__btn}`}
+                        type="submit"
+                    >
+                        <i className={`bi bi-search-heart-fill`}></i>
+                    </button>
+                </form>
             </nav>
             <Link className={styles.navbar__link} to={"/cartShopping"}>
-                <button className={`btn btn-light me-2 d-flex ${styles.navbar__btn}`}>
+                <button
+                    className={`btn btn-light me-2 d-flex ${styles.navbar__btn}`}
+                >
                     <i className="bi bi-bag-heart me-1"></i>
                     <span>{quantity}</span>
                 </button>

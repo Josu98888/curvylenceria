@@ -1,0 +1,22 @@
+@media (min-width: 0) {
+    .authOptions {
+        display: none;
+    }
+}
+@media (min-width: 1024px) {
+    .authOptions {
+        display: block;
+        border: 2px solid white;
+        margin: 15px;
+        padding: 8px;
+        border-radius: 5px;
+        filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+    }
+    .authOptions__link {
+        margin: 8px;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}

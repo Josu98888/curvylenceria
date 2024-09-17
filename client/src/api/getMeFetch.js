@@ -3,7 +3,7 @@ export const getMeFetch = async (token) => {
           const url = 'http://localhost:3933/api/v1/user/me' ;
 
           if(token) {
-               throw new Error('Token no encontrado');
+               return ;
           }
           const params = {
                method: 'GET',

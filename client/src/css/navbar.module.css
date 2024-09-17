@@ -1,18 +1,30 @@
-.navbar {
-     background-color:  rgb(248, 215, 248);
-     color: white;
-     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+ @media (min-width: 0) {
+   .navbar {
+      background-color:  rgb(248, 215, 248);
+      color: white;
+      filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .navbar__form {
      display: flex;
      justify-content: space-between;
-     align-items: center;
- }
- .navbar__form {
-    display: flex;
-    justify-content: space-between;
- }
- .navbar__btn {
-    color: rgb(227, 11, 235) ;
- }
- .navbar__link {
-    text-decoration: none;
- }
+  }
+  .navbar__btn {
+     color: rgb(227, 11, 235) ;
+  }
+  .navbar__link {
+     text-decoration: none;
+  }
+}
+/* tablet */
+@media (min-width: 768px) {
+
+}
+/* destopk */
+@media (min-width: 1024px) {
+   .navbar__form{
+       width: 300px;
+  }
+}
