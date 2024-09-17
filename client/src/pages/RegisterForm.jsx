@@ -115,7 +115,7 @@ const RegisterForm = () => {
                         <button className={styles.loginUser__button} type="submit">
                             Registrarse
                         </button>
-                        <Link to={`/loginForm`}>
+                        <Link className={styles.loginUser__link} to={`/loginForm`}>
                             <button className={styles.loginUser__button}>
                                 Iniciar sesión
                             </button>

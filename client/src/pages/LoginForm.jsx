@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/registerForm.module.css";
-import style from '../css/validation.module.css' ;
+import style from "../css/validation.module.css";
 import { loginFetch } from "../api/loginFetch";
 import { AuthContext } from "../context/AuthContext";
 
 const LoginForm = () => {
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [error, setError] = useState('') ;
+    const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -28,13 +28,13 @@ const LoginForm = () => {
         e.preventDefault();
         try {
             const { access } = await loginFetch(formData);
-            if(access) {
+            if (access) {
                 login(access);
             }
             localStorage.setItem("access", access);
             navigate("/");
         } catch (error) {
-            setError(error.msg) ;
+            setError(error.msg);
         }
     };
     return (
@@ -79,20 +79,22 @@ const LoginForm = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        {error && <p className={style.errorValidation} >{error}</p>}
+                        {error && (
+                            <p className={style.errorValidation}>{error}</p>
+                        )}
+                        {/* recuperar contraseña */}
+                        <p className={styles.loginUser__forgotPass}>
+                            Se olvido de contraseña?{" "}
+                            <Link className={styles.loginUser__link} to={`/forgotPassword`}>
+                                <span className={styles.forgotPassLink}>
+                                    Click aquí
+                                </span>
+                            </Link>
+                        </p>
                     </div>
-                    {/* recuperar contraseña */}
-                    <p className={styles.loginUser__forgotPass}>
-                        Se olvido de contraseña?{" "}
-                        <Link to={`/forgotPassword`}>
-                            <span className={styles.forgotPassLink}>
-                                Click aquí
-                            </span>
-                        </Link>
-                    </p>
                     {/* botones para elegir ruta login o register */}
                     <div className={styles.loginUser__containerBtns}>
-                        <Link to={`/registerForm`}>
+                        <Link className={styles.loginUser__link} to={`/registerForm`}>
                             <button className={styles.loginUser__button}>
                                 Registrarse
                             </button>

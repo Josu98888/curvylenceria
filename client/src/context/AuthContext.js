@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
      const [user, setUser] = useState(null);
      const [loading, setLoading] = useState(true) ;
+     
      useEffect(() => {
           (async () => {
                try {
@@ -13,11 +14,10 @@ export const AuthProvider = ({ children }) => {
                  if (token) {
                    await login(token); // llama a login solo si hay token
                  }
+                 setLoading(false); 
                } catch (error) {
                  console.error('Error durante la autenticación:', error);
-               } finally {
-                 setLoading(false); // loading se desactiva siempre
-               }
+               } 
              })();
      }, []);
 

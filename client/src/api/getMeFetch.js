@@ -2,7 +2,7 @@ export const getMeFetch = async (token) => {
      try {
           const url = 'http://localhost:3933/api/v1/user/me' ;
 
-          if(token) {
+          if(!token) {
                return ;
           }
           const params = {
