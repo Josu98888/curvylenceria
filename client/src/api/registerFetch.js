@@ -1,6 +1,6 @@
 export const registerFetch = async (data) => {
      try {
-          const url = 'http://localhost:3933/api/v1/auth/register' ;
+          const url = 'https://curvylenceria-server.onrender.com:3933/api/v1/auth/register' ;
 
           const params = {
                method: "POST",

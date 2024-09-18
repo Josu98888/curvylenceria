@@ -1,6 +1,6 @@
 export const changePasswordFetch = async (data,token) => {
      try {
-          const url = 'http://localhost:3933/api/v1/auth/changePassword'; 
+          const url = 'https://curvylenceria-server.onrender.com:3933/api/v1/auth/changePassword'; 
 
           const params = {
                method: "PATCH",
