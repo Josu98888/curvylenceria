@@ -1,23 +1,25 @@
 import React from "react";
 import styles from "../css/footer.module.css";
+import logo from '../assets/logoChiquito.png'
 
 
 const Footer = () => {
   return (
     <div className={styles.footer}>
       {/*parte arriba*/}
-      <div >
+      <div className={styles.footer__containerLogo}>
+        <img src={logo} alt="logo" />
       </div>
       {/*parte central*/}
       <div className={styles.footer__redes}>
         <div className={styles.footer__redes__redSocial}>
-          <i className="bi bi-tiktok"></i>
+          <i className={`bi bi-tiktok ${styles.footer__icon}`}></i>
         </div>
         <div className={styles.footer__redes__redSocial}>
-          <i className="bi bi-instagram"></i>
+          <i className={`bi bi-instagram ${styles.footer__icon}`}></i>
         </div>
         <div className={styles.footer__redes__redSocial}>
-          <i className="bi bi-facebook"></i>
+          <i className={`bi bi-facebook ${styles.footer__icon}`}></i>
         </div>
       </div>
       {/*parte abajo*/}

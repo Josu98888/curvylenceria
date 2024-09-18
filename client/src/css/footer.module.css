@@ -1,26 +1,79 @@
-.footer {
-     background-color: rgb(248, 215, 248);
-     filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
-     height: 130px;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
- }
- .footer__copyright ,.footer__redes {
-     margin: 5px;
- }
- 
- .footer__redes {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
- }
- .footer__redes__redSocial {
-     padding-inline: 5px;
- }
- .footer__copyright__text {
-     font-size: 8px;
-     color: black; 
-     font-weight: bold;
- }
+/* version mobile */
+@media (min-width: 0) {
+    .footer {
+        background-color: rgb(248, 215, 248);
+        filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__containerLogo {
+        width: 150px;
+        filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+
+    }
+    .footer__logo {
+       object-fit: cover;
+    }
+    .footer__copyright ,.footer__redes {
+        margin: 5px;
+    }
+    .footer__redes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        filter: drop-shadow(5px 5px 10px rgb(227, 11, 235));
+    }
+    .footer__redes__redSocial {
+        padding-inline: 5px;
+    }
+    .footer__copyright__text {
+        font-size: 8px;
+        color: black; 
+        font-weight: bold;
+    }
+}
+/* version tablet */
+@media (min-width: 768px) {
+    .footer {
+        height: 140px;
+    }
+    .footer__copyright ,.footer__redes {
+        margin: 8px;
+    }
+    .footer__redes {
+        margin: 8px;
+    }
+    .footer__redes__redSocial {
+        padding-inline: 8px;
+    }
+    .footer__copyright__text {
+        font-size: 10px;
+    }
+    .footer__icon {
+        font-size: 20px;
+    }
+}
+/* version laptop */
+@media (min-width: 1024px) {
+    .footer {
+        height: 150px;
+    }
+    .footer__copyright ,.footer__redes {
+        margin: 10px;
+    }
+    .footer__redes {
+        margin: 10px;
+    }
+    .footer__redes__redSocial {
+        padding-inline: 10px;
+    }
+    .footer__copyright__text {
+        font-size: 10px;
+    }
+    .footer__icon {
+        font-size: 22px;
+    }
+}

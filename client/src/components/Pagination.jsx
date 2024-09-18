@@ -1,4 +1,5 @@
 import React from "react";
+import styles from '../css/title.module.css' ;
 
 const Pagination = ({
     productsPerPage,
@@ -21,8 +22,11 @@ const Pagination = ({
         setCurrentPage(n);
     };
     return (
-        <nav className="d-flex justify-content-center" aria-label="Page navigation example">
-            <ul className="pagination">
+        <nav
+            className="d-flex justify-content-center"
+            aria-label="Page navigation example"
+        >
+            <ul className='pagination'>
                 <li
                     className={`page-item ${
                         currentPage === 1 ? "disabled" : ""
@@ -32,8 +36,11 @@ const Pagination = ({
                         className="page-link"
                         aria-label="Previous"
                         onClick={onPreviusPage}
-                        disabled={currentPage === 1} 
-                        style={{ color: 'white', backgroundColor: 'rgb(227, 11, 235)' }}
+                        disabled={currentPage === 1}
+                        style={{
+                            color: "white",
+                            backgroundColor: "rgb(227, 11, 235)",
+                        }}
                     >
                         <span aria-hidden="true">&laquo;</span>
                     </button>
@@ -48,8 +55,24 @@ const Pagination = ({
                         key={noPage}
                         onClick={() => onSpecificPage(noPage)}
                     >
-                        <button className="page-link"
-                        style={noPage === currentPage ? { backgroundColor: 'rgb(227, 11, 235)', color: 'white',borderColor: 'white', filter:'drop-shadow(5px 5px 10px rgb(227, 11, 235))' } : { color: 'white', backgroundColor: 'rgb(248, 215, 248)' }}>{noPage}</button>
+                        <button
+                            className="page-link"
+                            style={
+                                noPage === currentPage
+                                    ? {
+                                          backgroundColor: "rgb(227, 11, 235)",
+                                          color: "white",
+                                          borderColor: "white",
+                                          filter: "drop-shadow(5px 5px 10px rgb(227, 11, 235))",
+                                      }
+                                    : {
+                                          color: "white",
+                                          backgroundColor: "rgb(248, 215, 248)",
+                                      }
+                            }
+                        >
+                            {noPage}
+                        </button>
                     </li>
                 ))}
                 <li
@@ -61,8 +84,11 @@ const Pagination = ({
                         className="page-link"
                         aria-label="Next"
                         onClick={onNextPage}
-                        disabled={currentPage >= numberPage.length} 
-                        style={{ color: 'white', backgroundColor: 'rgb(227, 11, 235)' }}
+                        disabled={currentPage >= numberPage.length}
+                        style={{
+                            color: "white",
+                            backgroundColor: "rgb(227, 11, 235)",
+                        }}
                     >
                         <span aria-hidden="true">&raquo;</span>
                     </button>

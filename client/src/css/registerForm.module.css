@@ -99,7 +99,9 @@
         filter: drop-shadow(5px 5px 10px white);
         font-size: 12px;
     }
-    
+    .loginUser__link {
+        text-decoration: none;
+    }
 }
 /* version tablet */
 @media (min-width: 768px) {
@@ -147,9 +149,6 @@
         width: 100px;
         height: 45px;
         font-size: 14px;
-    }
-    .loginUser__link {
-        text-decoration: none;
     }
 }
 /* version laptop */
