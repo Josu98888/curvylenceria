@@ -1,6 +1,6 @@
 export const getMeFetch = async (token) => {
      try {
-          const url = 'https://curvylenceria-server.onrender.com:3933/api/v1/user/me' ;
+          const url = 'https://curvylenceria.onrender.com/api/v1/user/me' ;
 
           if(!token) {
                return ;

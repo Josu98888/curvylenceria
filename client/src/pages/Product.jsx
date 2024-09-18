@@ -73,7 +73,7 @@ function Product() {
             <div className="card">
                 <img
                     className="card-img-top"
-                    src={`http://localhost:3933/${image}`}
+                    src={`https://curvylenceria.onrender.com/${image}`}
                     alt="product"
                 />
                 <h1 className={styles.product__title}> {title} </h1>

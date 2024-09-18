@@ -1,7 +1,7 @@
 export const getProductsFetch = async () => {
      try {
           // trae la url 
-          const url = 'https://curvylenceria-server.onrender.com:3933/api/v1/products';
+          const url = 'https://curvylenceria.onrender.com/api/v1/products';
           const response = await fetch(url);
           if (!response.ok) {
                throw new Error('No se pudo obtener los productos');

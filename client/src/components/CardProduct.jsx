@@ -13,7 +13,7 @@ const CardProduct = ({ item }) => {
                 {/* imagen */}
                 <img
                     className="card-img-top"
-                    src={`http://localhost:3933/${image}`}
+                    src={`https://curvylenceria.onrender.com/${image}`}
                     alt="product"
                 />
                 {/* titulo */}

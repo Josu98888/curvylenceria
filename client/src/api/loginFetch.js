@@ -1,6 +1,6 @@
 export const loginFetch = async (data) => {
      try {
-          const url = 'https://curvylenceria-server.onrender.com:3933/api/v1/auth/login' ;
+          const url = 'https://curvylenceria.onrender.com/api/v1/auth/login' ;
 
           const params = {
                method: 'POST',

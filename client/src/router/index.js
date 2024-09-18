@@ -50,7 +50,6 @@ export const router = createBrowserRouter([
             {
                 path: '/products/:_id',
                 element: <Product />,
-                // loader: getProductFetch,
             },
             {
                 path: '/search',
