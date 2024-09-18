@@ -10,9 +10,9 @@ require('dotenv').config()
 const dbUser = process.env.DB_USER ;
 const dbPass = process.env.DB_PASS ;
 const dbHost = process.env.DB_HOST ;
-const ipServer = 'localhost' ;
-const apiVersion = 'v1' ;
-const port = 3933 ;
+const ipServer = process.env.IP_SERVER ;
+const apiVersion = process.env.API_VERSION ;
+const port = process.env.PORT;
 
 // conecta la BD
 const connectDB = async () => {

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from '../css/title.module.css' ;
 
 const Pagination = ({
     productsPerPage,
